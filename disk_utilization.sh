@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # default value to use if none specified
-PERCENT=50
+PERCENT=80  #You can change the value according to your requirement, if threshold increases from 80 it will give a message. You can also set to inform via email for serverside if needed 
 
 # test for command line arguement is present
 if [[ $# -le 0 ]]   # if $# is something which stores the previous command output, -le means less than ge greater than   
@@ -9,6 +9,7 @@ then
     printf "There are no disks running with more usage than= %d\n" $PERCENT
 # test if argument is an integer
 # if it is, use that as percent, if not use default
+
 else
     if [[ $1 =~ ^-?[0-9]+([0-9]+)?$ ]] # regex pattern 
     then
